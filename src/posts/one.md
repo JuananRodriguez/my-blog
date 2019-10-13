@@ -6,5 +6,10 @@ tags: ["React","Blogging"]
 excerpt: "A preview of my first post"
 ---
 
-## The title
-Lorem Ipsim.
+## Esto es un título
+### Pero seto que eeeeees
+* JEJEJE
+* Jajajaja
+  
+  **Negrita**
+  
