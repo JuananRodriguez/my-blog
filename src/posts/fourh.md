@@ -7,4 +7,4 @@ excerpt: "A preview of my second post"
 ---
 
 ## The title
-Lorem Ipsim.
+Lorem Ipsim. 
