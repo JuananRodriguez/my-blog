@@ -5,7 +5,7 @@
  */
 
 // You can delete this file if you're not using it
-
+import './src/index.scss';
 export { default as wrapRootElement } from './src/services/redux/ReduxWrapper';
 
 // import React from 'react';

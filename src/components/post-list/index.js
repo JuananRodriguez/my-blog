@@ -1,20 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import './index.scss';
+import {Link} from 'gatsby'
+import Tag from '../tag';
 
 class PostItem extends React.PureComponent{
-
+    static propTypes = {
+        to:  PropTypes.string,
+        resume: PropTypes.string,
+        title: PropTypes.string,
+        date: PropTypes.string,
+        tags: PropTypes.array,
+    }
 
     render(){
+        const {to, resume, title, date, tags, host} = this.props;
+        const formattedDate = new Date(date);
         return(
             <div className={"post-item-wrapper"}>
                 <div className={"post-item-header"}>
-                    <h4>Título</h4>
+                   <Link to={to}>
+                        <h4>{title}</h4>
+                    </Link>
                 </div>
                 <div className={"post-item-body"}>
-                    <p>Aquí va el resumen</p>
+                    <p>{resume}</p>
                 </div>
-                <div className={"post-item-footer"}>
-                    <p>Aquí va el footer</p>
-                </div>
+                <div className={"post-item-tags"}>
+                        <p className={"date"}>{formattedDate.toLocaleDateString()}</p>
+                        {tags && tags.map(tag => <Tag key={tag} to={`/tags/${tag}`}>{tag}</Tag>)}
+                    </div>
             </div>
         )
     }

@@ -1,0 +1,16 @@
+@import './../../variables';
+
+.tag-wrapper{
+    padding: 2px 8px;
+    font-size: 0.85em;
+    margin: 0 5px;
+    background-color: #eee;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 300ms, color 300ms;
+
+    &:hover {
+        background-color: $PRIMARY_BASE_COLOR;
+        color: #fff
+    }
+}

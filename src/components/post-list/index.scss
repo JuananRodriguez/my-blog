@@ -1,13 +1,49 @@
+@import './../../variables';
+
 .post-item-wrapper{
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    position: relative;
 
-    & > .post-item-header {
+    &:hover{
+        margin: -1px;
+        border: 1px solid $PRIMARY_BASE_COLOR;
+        border-radius: 5px;
+        & h4{
+            color: $PRIMARY_BASE_COLOR !important
+        }
+    }
     
+    & > .post-item-header {
+        margin-bottom: 5px;
+        &  h4{
+            font-weight: 200;
+            letter-spacing: 0.05em;
+            font-size: 1.8em;
+            margin-bottom: 0;
+            color: #7a7a7a;
+        }
     }
-    & > .post-item-body {
+    
+    & > .post-item-body p{
+        margin-bottom: 0;
         
     }
-    & > .post-item-footer {
-        
-    }
+    & > .post-item-tags {
+        margin: 10px 0;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
 
+        & > .date{
+            font-weight: 200;
+            font-size: 0.85em;
+            margin-bottom: 0;
+            padding-right: 5px;;
+        }
+    }
+    
 }

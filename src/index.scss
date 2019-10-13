@@ -1,0 +1,13 @@
+@import 'variables';
+
+*{
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    color: #555;
+    text-decoration: none;
+    &:hover *{
+        color: $PRIMARY_BASE_COLOR !important
+    }
+}
