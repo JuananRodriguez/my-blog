@@ -2,48 +2,49 @@
 * Implement Gatsby's Node APIs in this file.
 * See: https://www.gatsbyjs.org/docs/node-apis/
 *** */
-const path = require('path')
+const path = require('path');
+const BLOG_PATH = 'blog';
 
 const createTagPages = (createPage, posts) => {
     const allTagsIndexTemplate = path.resolve('src/templates/allTagsIndex.js');
     const singleTagIndexTemplate = path.resolve('src/templates/singleTagIndex.js');
-
+    
     const postsByTag = {}
-
+    
     posts.forEach(({node}) => {
         if (node.frontmatter.tags) {
-          node.frontmatter.tags.forEach(tag => {
-            if(!postsByTag[tag]) {
-              postsByTag[tag] = []
-            }
-
-            postsByTag[tag].push({node})
-          })
+            node.frontmatter.tags.forEach(tag => {
+                if(!postsByTag[tag]) {
+                    postsByTag[tag] = []
+                }
+                
+                postsByTag[tag].push({node})
+            })
         }
-      })
-
-      const tags = Object.keys(postsByTag);
-
-      createPage({
-          path: '/tags',
-          component: allTagsIndexTemplate,
-          context: {
-              tags: tags.sort()
-          }
-      })
-
-      tags.forEach(tagName => {
-          const posts = postsByTag[tagName];
-
-          createPage({
-              path: `/tags/${tagName}`,
-              component: singleTagIndexTemplate,
-              context: {
-                  posts,
-                  tagName
-              }
-          })
-      })
+    })
+    
+    const tags = Object.keys(postsByTag);
+    
+    createPage({
+        path: '/tags',
+        component: allTagsIndexTemplate,
+        context: {
+            tags: tags.sort()
+        }
+    })
+    
+    tags.forEach(tagName => {
+        const posts = postsByTag[tagName];
+        
+        createPage({
+            path: `/tags/${tagName}`,
+            component: singleTagIndexTemplate,
+            context: {
+                posts,
+                tagName
+            }
+        })
+    })
 }
 
 exports.createPages= (({graphql, actions}) => {
@@ -63,6 +64,7 @@ exports.createPages= (({graphql, actions}) => {
                                 path
                                 title
                                 tags
+                                img
                                 excerpt
                             }
                         }
@@ -70,17 +72,21 @@ exports.createPages= (({graphql, actions}) => {
                 }
             }
             `).then(result => {
-                const posts = result.data.allMarkdownRemark.edges;
-
+                let posts = result.data.allMarkdownRemark.edges;
+                
+                // posts = posts.map((post)=> {
+                //     post.node.frontmatter.path = `${BLOG_PATH}/${post.node.frontmatter.path}`;
+                //     return post
+                // })
+                
                 createTagPages(createPage, posts)
-
+                
                 posts.forEach( ({ node }, index) => {
-                    const path = node.frontmatter.path;
                     createPage({
-                        path,
+                        path : node.frontmatter.path,
                         component: blogPostTemplate,
                         context: {
-                            pathSlug: path,
+                            pathSlug: node.frontmatter.path,
                             prev: index === 0 ? null : posts[index - 1].node,
                             next: index === (posts.length - 1) ? null : posts[index + 1].node,
                         }

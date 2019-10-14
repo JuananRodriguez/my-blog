@@ -6,7 +6,6 @@ const Header = ({ siteTitle }) => (
   <header
     style={{
       background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
     }}
   >
     <div
@@ -17,7 +16,7 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <h1 style={{ margin: 0 }}>
-        <Link
+        {/* <Link
           to="/"
           style={{
             color: `white`,
@@ -25,8 +24,14 @@ const Header = ({ siteTitle }) => (
           }}
         >
           {siteTitle}
-        </Link>
+        </Link> */}
       </h1>
+      <nav>
+        <ul style={{display: "flex", listStyle: "none"}}> 
+        <Link to="/"><li>Home</li></Link>
+        <Link to="/blog"><li>Blog</li></Link>
+        </ul>
+      </nav>
     </div>
   </header>
 )
