@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
+import './PostResume.scss';
 import {Link} from 'gatsby'
 import Tag from '../tag';
 
@@ -14,7 +14,7 @@ class PostItem extends React.PureComponent{
     }
 
     render(){
-        const {to, resume, title, date, tags, host} = this.props;
+        const { to, resume, title, date, tags } = this.props;
         const formattedDate = new Date(date);
         return(
             <div className={"post-item-wrapper"}>

@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import Image from "../components/image";
 import SEO from "../components/seo";
 
 import {connect} from 'react-redux';
-import PostList from "../components/post-list"
+import PostList from "../components/PostResume"
 
 class HomePage extends React.PureComponent{
   

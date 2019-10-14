@@ -1,33 +1,16 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
+import ListPosts from "../components/ListPosts";
 import SEO from "../components/seo";
-import PostList from '../components/post-list';
 
-const SecondPage = ({ data, location }) => {
-  const { edges } = data.allMarkdownRemark;
-  const { host } = location;
-
+const SecondPage = ({ data }) => {
   return(
     <Layout>
     <SEO title="Page two" />
 
-    {
-        edges.map(edge => {
-          const {frontmatter} = edge.node;
-          return (
-              <PostList
-                host={host}
-                to={frontmatter.path}
-                resume={frontmatter.excerpt}
-                title={frontmatter.title}
-                date={frontmatter.date}
-                tags={frontmatter.tags}
-              />
-          )
-        })
-    }
+    <ListPosts posts={data.allMarkdownRemark.edges}/> 
     
     <Link to="/">Go back to the homepage</Link>
     </Layout>

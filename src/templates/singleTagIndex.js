@@ -1,27 +1,20 @@
 import React from 'react';
-import {graphql, Link} from 'gatsby';
+import Layout from './../components/Layout';
+import ListPosts from './../components/ListPosts';
 
-const SingleTagTemplate = ({data, pageContext}) =>{
+const SingleTagTemplate = ({pageContext}) =>{
     console.log(pageContext)
 
     const { posts, tagName } = pageContext;
     return(
-        <div>
+        <Layout>
             <div>
                 Posts sobre {tagName}
             </div>
             <div>
-                {
-                    posts.map((post) => (
-                        <div key={post.frontmatter.path}>
-                            <Link to={post.frontmatter.path}>
-                                {post.frontmatter.title}
-                            </Link>
-                        </div>
-                    ))
-                }
+                <ListPosts posts={posts}/> 
             </div>
-        </div>
+        </Layout>
     )
 }
 

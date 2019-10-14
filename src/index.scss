@@ -1,7 +1,20 @@
 @import 'variables';
 
 *{
-    font-family: "Open Sans", sans-serif;
+    font-family: $PRIMARY_FONT_FAMILY;
+}
+
+p, a, span, li, ul{
+    font-size: 16px;
+    letter-spacing: .20px;
+//     line-height: 30px;
+
+    // font-family: Lato,sans-serif;
+    // font-size: 1rem;
+    // font-weight: 400;
+    // line-height: 1.7;
+    color: #555;
+    font-weight: lighter;
 }
 
 a {

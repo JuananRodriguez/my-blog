@@ -17,7 +17,7 @@ const createTagPages = (createPage, posts) => {
               postsByTag[tag] = []
             }
 
-            postsByTag[tag].push(node)
+            postsByTag[tag].push({node})
           })
         }
       })

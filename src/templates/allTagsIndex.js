@@ -1,10 +1,11 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
+import Layout from './../components/Layout';
 
 const AllTagsTemplate = ({data, pageContext}) =>{
     const {tags} = pageContext;
     return(
-        <div>
+        <Layout>
             <div>
                 {tags.map((tagName) => {
                 return (
@@ -16,8 +17,9 @@ const AllTagsTemplate = ({data, pageContext}) =>{
                 )
                 })}
             </div>
-        </div>
+        </Layout>
     )
 }
+
 
 export default AllTagsTemplate;

@@ -4,17 +4,17 @@
     padding: 15px;
     margin-top: 15px;
     margin-bottom: 15px;
-    cursor: pointer;
+    // cursor: pointer;
     position: relative;
 
-    &:hover{
-        margin: -1px;
-        border: 1px solid $PRIMARY_BASE_COLOR;
-        border-radius: 5px;
-        & h4{
-            color: $PRIMARY_BASE_COLOR !important
-        }
-    }
+    // &:hover{
+    //     margin: -1px;
+    //     border: 1px solid $PRIMARY_BASE_COLOR;
+    //     border-radius: 5px;
+    //     & h4{
+    //         color: $PRIMARY_BASE_COLOR !important
+    //     }
+    // }
     
     & > .post-item-header {
         margin-bottom: 5px;
