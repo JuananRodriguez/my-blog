@@ -1,4 +1,5 @@
 ---
+type: post
 path: "/first-post"
 date: "2018-07-20"
 title: "My first post"

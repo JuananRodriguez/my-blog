@@ -15,11 +15,13 @@ const SecondPage = ({ data }) => {
     <Link to="/">Go back to the homepage</Link>
     </Layout>
     )
-  }
+  };
    
   export const query = graphql`
   query HomepageQuery {
-    allMarkdownRemark ( sort: {order: DESC, fields: [frontmatter___date]})
+    allMarkdownRemark ( 
+      filter: { frontmatter: { type: {eq: "post"} } }, 
+      sort: {order: DESC, fields: [frontmatter___date]})
     {
       edges {
         node {
@@ -34,7 +36,7 @@ const SecondPage = ({ data }) => {
       }
     }
   }
-  `
+  `;
   
   export default SecondPage
   

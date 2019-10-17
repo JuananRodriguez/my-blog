@@ -19,7 +19,7 @@ const AllTagsTemplate = ({data, pageContext}) =>{
             </div>
         </Layout>
     )
-}
+};
 
 
 export default AllTagsTemplate;

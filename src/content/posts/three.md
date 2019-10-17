@@ -1,4 +1,5 @@
 ---
+type: post
 path: "/third-post"
 date: "2018-07-22"
 title: "My third post"

@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import Image from '../components/image';
 import PostMainImage from '../components/PostMainImage';
 import SEO from '../components/seo';
-import {graphql, Link} from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import './blogPost.scss';
 
 const Template = ({data, pageContext, ...rest}) => {
@@ -43,7 +43,7 @@ const Template = ({data, pageContext, ...rest}) => {
             }
         </Layout>
     )
-}
+};
 
 export const query = graphql`
  query($pathSlug: String!) {
@@ -55,6 +55,6 @@ export const query = graphql`
          }
      }
  }
-`
+`;
 
 export default Template
