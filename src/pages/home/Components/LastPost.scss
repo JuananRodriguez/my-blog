@@ -1,0 +1,11 @@
+.last-post{
+  & > .content {
+    //word-wrap: break-word;
+    text-overflow: ellipsis;
+    height: 125px;
+    width: 100%;
+    overflow: hidden;
+    font-size: 16px;
+    //white-space: nowrap;
+  }
+}

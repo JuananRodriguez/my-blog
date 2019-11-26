@@ -1,14 +1,10 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Container, Columns } from "../../elements/GridLayout";
+import SectionLastProjects from "./Components/SectionLastProjects";
+import SectionLastPosts from "./Components/SectionLastPosts";
+import './index.scss'
 
-import Layout from "../components/Layout";
-import Image from "../components/image";
-import SEO from "../components/seo";
-
-import {connect} from 'react-redux';
-import PostList from "../components/PostResume"
-
-const Proyects = [
+const Projects = [
   {
     url: '/blog',
     title: "Imagen corporativa para Bears in black",
@@ -59,55 +55,16 @@ const Posts = [
 ];
 
 
-
-class HomePage extends React.PureComponent{
+class Home extends React.Component{
 
   render() {
     return (
-      <Layout>
-        <SEO title="Home" />
-        {/*<div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>*/}
-        {/*<Image fileName={"gatsby-icon.png"} />*/}
-        {/*<Image fileName={"gatsby-astronaut.png"} />*/}
-        {/*</div>*/}
-
-
-        <section>
-          <h2>Ultimos Proyectos</h2>
-          { Proyects.map(p=>(
-            <div>
-              <h3>{p.title}</h3>
-              <p>{p.title}</p>
-            </div>
-          ))
-          }
-        </section>
-
-        <section>
-          <h2>Ultimos Posts</h2>
-          { Posts.map(p=>(
-            <div>
-              <h3>{p.title}</h3>
-              <span>{p.date.toLocaleDateString()}</span>
-              <span>{p.tags}</span>
-              <p>{p.title}</p>
-            </div>
-          ))
-          }
-        </section>
-
-
-
-
-
-      </Layout>
+      <Container>
+        <SectionLastProjects data={Projects} />
+        <SectionLastPosts data={Posts}/>
+      </Container>
     )
   }
 }
 
-const mapStateToProps = ({posts}) =>({
-  posts: posts.list
-})
-
-export default connect(mapStateToProps)(HomePage)
-  
+export default Home;

@@ -1,26 +1,25 @@
 @import 'variables';
+@import "../node_modules/flexboxgrid/dist/flexboxgrid.min.css";
 
 *{
     font-family: $PRIMARY_FONT_FAMILY;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: $SECONDARY_FONT_FAMILY;
+
+}
+
 p, a, span, li, ul{
     font-size: 16px;
-    letter-spacing: .20px;
-//     line-height: 30px;
-
-    // font-family: Lato,sans-serif;
-    // font-size: 1rem;
-    // font-weight: 400;
-    // line-height: 1.7;
-    color: #555;
-    font-weight: lighter;
+    font-weight: normal;
+    //letter-spacing: .20px;
 }
 
 a {
     color: #555;
     text-decoration: none;
     &:hover *{
-        color: $PRIMARY_BASE_COLOR !important
+        color: $PRIMARY_BASE_COLOR
     }
 }

@@ -1,0 +1,12 @@
+@import "./variables";
+
+.grid-layout {
+  &.container{
+    display: grid;
+    grid-template-columns: repeat(#{$NUM_OF_COLUMNS}, 1fr);
+
+    & > .xs-12 {
+    }
+
+  }
+}

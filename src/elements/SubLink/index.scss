@@ -1,0 +1,23 @@
+@import "../../variables";
+
+.sub-link {
+  padding: 5px;
+  font-size: 14px;
+  position: absolute;
+  text-transform: lowercase;
+  letter-spacing: 0;
+  bottom: 0;
+  transform: translate(-34px, 17px);
+  color: $LINK_COLOR;
+
+  &:hover {
+    color: black;
+    & > span.arrow {
+      display: inline;
+      position: relative;
+      transform: translateX(10px);
+      color: black ;
+    }
+  }
+
+}
